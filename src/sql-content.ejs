@@ -1,0 +1,70 @@
+<html data-theme="<%= theme %>">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="<%=basehref%>" target="_blank">
+  <link rel="stylesheet" type="text/css" href="views/html/css/pico.css" />
+  <link rel="stylesheet" type="text/css" href="views/html/css/styles.css" />
+
+  <style>
+    body, table, p {
+      font-size: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container-fluid">
+  <% queries.forEach(function(query) { %>
+    <details open>
+      <summary>results (<%= query.rows.length %>)</summary>
+      <table role="grid">
+        <thead>
+          <% if (query.headers) { %>
+            <tr>
+              <th></th>
+              <% query.headers.forEach(function(key) { %>
+                <th>
+                  <%= key %>
+                </th>
+              <% }) %>
+            </tr>
+          <% } %>
+        </thead>
+        <tbody>
+          <% query.rows.forEach(function(row, i) { %>
+            <tr>
+              <td> <%= (i + 1) %> </td>
+              <% Object.values(row).forEach(function(value) { %>
+                <td>
+                  <%= value %>
+                </td>
+              <% }) %>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </details>
+    <footer>
+      <details>
+        <summary>messages</summary>
+        <p>[<%= now %>] Total execution time: <%= query.duration %> secs</p>
+        <% if (query.changes) { %>
+          <p>[<%= now %>] Total changes: <%= query.changes %></p>
+        <% } %>
+      </details>
+    </footer>
+  <% }) %>
+  <% if (errors.length > 0) { %>
+  <details open>
+      <summary>errors (<%= errors.length %>)</summary>
+      <% errors.forEach(function(error) { %>
+        <p>code <%= error.code %>: <%= error.message %></p>
+      <% }) %>
+  </details>
+  <% } %>
+  </main>
+</body>
+
+</html>

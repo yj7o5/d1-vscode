@@ -1,0 +1,26 @@
+things that don't work:
+
+problem 1. 
+when creating a new table if the selected context is not the database then it results in an error
+it's because here `vscode.commands.registerCommand(cmdExecuteQuery, () => this.executeQuery(this._explorerService.currentNode))`
+selects the currentNode as the current context and if we have anything other than the database it tries to run the query against
+a different object other than the database itself
+
+solution:
+tbd 
+
+promblem 2.
+
+
+todo:
+right click profile:
+1. create db 
+2. the font size appears to be too big in results window 
+3. when non-select queries are run nothing is show in the output window; show execution time
+  - when we insert return number of rows inserted etc. - done
+4. allow running multiple selects so you could see multiple results - done
+5. bug when query is executed once, the results are shown in the next query execution - done
+6. not showing errors in the results pane, say write a bad query then the errors don't get rendered - done
+7. show in the status bar which database you're connected to atm
+8. show indexes, views in the object explorer panel
+9. start writing the initial documentation

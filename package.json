@@ -1,0 +1,150 @@
+{
+  "name": "d1",
+  "displayName": "d1",
+  "description": "Explore and query Cloudflare D1 databases",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "d1-explorer",
+          "title": "Cloudflare D1",
+          "icon": "$(server)"
+        }
+      ]
+    },
+    "views": {
+      "d1-explorer": [
+        {
+          "id": "objects",
+          "name": "Accounts"
+        },
+        {
+          "id": "queries",
+          "name": "Queries"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "d1.addProfile",
+          "when": "view == objects",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "d1.removeProfile",
+          "when": "view == objects && viewItem == account",
+          "group": "D1_SQL@1"
+        },
+        {
+          "command": "d1.createDatabase",
+          "when": "view == objects && viewItem == account",
+          "group": "D1_SQL@2"
+        },
+        {
+          "command": "d1.selectScript",
+          "when": "view == objects && viewItem == table",
+          "group": "D1_SQL@1"
+        },
+        {
+          "command": "d1.dropScript",
+          "when": "view == objects && viewItem == table",
+          "group": "D1_SQL@2"
+        },
+        {
+          "command": "d1.createScript",
+          "when": "view == objects && viewItem == table",
+          "group": "D1_SQL@3"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "d1.addProfile",
+        "title": "Add account"
+      },
+      {
+        "command": "d1.removeProfile",
+        "title": "Remove account"
+      },
+      {
+        "command": "d1.createDatabase",
+        "title": "Create database"
+      },
+      {
+        "command": "d1.executeQuery",
+        "title": "D1: Execute Query"
+      },
+      {
+        "command": "d1.expandObject",
+        "title": "D1: Expand Object"
+      },
+      {
+        "command": "d1.addProfile",
+        "title": "D1: Add Account",
+        "icon": "$(add)"
+      },
+      {
+        "command": "d1.chooseDatabase",
+        "title": "D1: Use Database",
+        "icon": "$(selection)"
+      },
+      {
+        "command": "d1.selectScript",
+        "title": "Select top 100 rows"
+      },
+      {
+        "command": "d1.dropScript",
+        "title": "Script as drop"
+      },
+      {
+        "command": "d1.createScript",
+        "title": "Script as create"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.1",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.69.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.18.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "node-fetch": "^3.2.8",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8"
+  }
+}
