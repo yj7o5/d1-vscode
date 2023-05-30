@@ -3,6 +3,7 @@
   "displayName": "d1",
   "description": "Explore and query Cloudflare D1 databases",
   "version": "0.0.1",
+  "publisher": "d1-vscode",
   "engines": {
     "vscode": "^1.69.0"
   },
