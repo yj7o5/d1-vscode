@@ -47,27 +47,27 @@ export class ConnectionManager {
 
   async addProfile(): Promise<IConnectionProfile> {
     const apiKey = await vscode.window.showInputBox({
-      prompt: "provide your cloudflare api key",
+      prompt: "Provide a Cloudflare API key (which has access to D1)",
       value: process.env.CF_API_KEY,
       ignoreFocusOut: true
     });
 
     const accountId = await vscode.window.showInputBox({
-      prompt: "provide your account id",
+      prompt: "Provide the Account ID",
       value: process.env.CF_ACCOUNT_ID,
       ignoreFocusOut: true
     });
 
     const email = await vscode.window.showInputBox({
-      prompt: "provide your email",
+      prompt: "Provide your email",
       value: process.env.CF_EMAIL,
       ignoreFocusOut: true
     });
 
     const name = await vscode.window.showInputBox({
-      prompt: "provide a friendly name",
+      prompt: "Provide a friendly name",
       placeHolder: "[optional] Enter a display name for this account profile",
-      value: "Tester",
+      value: "My D1 Databases",
       ignoreFocusOut: true
     });
 
@@ -88,7 +88,7 @@ export class ConnectionManager {
 		const conn = node.data<IConnectionProfile>();
 		const { accountId, apiKey,  email } = conn;
 		const databaseName = await vscode.window.showInputBox({
-			prompt: "provide the new database name",
+			prompt: "Provide the new database name",
 			// TODO: place some validation
 			// validateInput: function(value: string) {}
 		});
