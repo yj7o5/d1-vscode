@@ -18,9 +18,13 @@ The D1 Extension for Visual Studio Code provides a convenient interface for quer
 1. Install the extension from the Visual Studio Code Marketplace
 2. Open a new or existing SQL file in Visual Studio Code
 3. Open the D1 extension sidebar by clicking on the D1 logo in the left sidebar
-4. Click the "Connect" button to connect to your D1 database
-5. Run SQL queries by typing them into the query editor and clicking "Run Query"
-6. View the results in the Results pane on the right column.  
+![Open D1](images/open-d1-ext.gif)
+4. Add a new account
+![Add Account](images/add-new-account.gif)
+5. Select the desired database
+![Select Database](images/select-d1-database.gif)
+6. Run SQL queries by typing them into the query editor and clicking "Run Query" in the status panel below to see the results in the right pane
+![Run Queries](images/run-query-d1.gif)
 
 ## Commands
 The extension provides several commands in the Command Palette (prefixed with "D1"):
@@ -28,19 +32,3 @@ The extension provides several commands in the Command Palette (prefixed with "D
   * **D1: Remove Account**: Remove an account from the object explorer.
   * **D1: Use Database**: Switch to a database within an Cloudflare account, to use as the desired database to run queries against.
   * **D1: Execute Query**: Execute Query script, D1 statements in the editor.
-
-## License
-
-This extension is licensed under the MIT License. See the LICENSE file for more information.
-
-## Contributing
-
-Contributions are welcome! Please see the CONTRIBUTING.md file for more information.
-
-## Feedback and Support
-
-If you have any feedback or issues with the extension, please submit them to the GitHub repository: [link to repo].
-
-## Acknowledgements
-
-This extension was inspired by [similar extension or tool] and would not be possible without the hard work of the Cloudflare D1 team. Thank you!

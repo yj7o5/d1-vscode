@@ -49,17 +49,19 @@ export class ConnectionManager {
     const apiKey = await vscode.window.showInputBox({
       prompt: "Provide a Cloudflare API key (which has access to D1)",
       value: process.env.CF_API_KEY,
-      ignoreFocusOut: true
+      password: true,
+      ignoreFocusOut: true,
     });
 
     const accountId = await vscode.window.showInputBox({
-      prompt: "Provide the Account ID",
+      prompt: "Provide the account ID",
       value: process.env.CF_ACCOUNT_ID,
+      password: true,
       ignoreFocusOut: true
     });
 
     const email = await vscode.window.showInputBox({
-      prompt: "Provide your email",
+      prompt: "Provide your account email",
       value: process.env.CF_EMAIL,
       ignoreFocusOut: true
     });
