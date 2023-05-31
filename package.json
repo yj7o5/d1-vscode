@@ -2,11 +2,11 @@
   "name": "cf-d1",
   "displayName": "Cloudflare D1",
   "description": "Explore and query Cloudflare D1 databases",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "yawarjamal",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yj7o5/d1-vscode.git"
+    "url": "https://github.com/yj7o5/d1-vscode.git"
   },
   "engines": {
     "vscode": "^1.69.0"
