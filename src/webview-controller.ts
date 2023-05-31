@@ -71,7 +71,7 @@ export class WebviewController implements vscode.Disposable {
 
     const fileUri = vscode.Uri.joinPath(
       vscode.extensions.getExtension("yawarjamal.cf-d1")!.extensionUri,
-      "src/sql-content.ejs"
+      "assets/sql-content.ejs"
     );
     const fileContent = await vscode.workspace.fs.readFile(fileUri);
     const formattedHTML = ejs.render(fileContent.toString(), data);
