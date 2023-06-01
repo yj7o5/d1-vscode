@@ -2,17 +2,6 @@
 
 The D1 Extension for Visual Studio Code provides a convenient interface for querying and viewing results from Cloudflare's D1 product. With this extension, you can easily run SQL queries against your D1 database across multiple accounts and see the results right in your editor.
 
-## Features
-
-- Connect to your D1 database from within VS Code
-- Run SQL queries and see the results in a tabular format
-- Easily switch between multiple databases
-- Easily Explore table schemas 
-- TBD features
-  - Export query results to CSV or JSON
-  - code completion integration
-  - object explorer for views, indexes, etc
-
 ## Getting Started
 
 1. Install the extension from the Visual Studio Code Marketplace
@@ -25,6 +14,17 @@ The D1 Extension for Visual Studio Code provides a convenient interface for quer
 ![Select Database](assets/select-d1-database.gif)
 6. Run SQL queries by typing them into the query editor and clicking "Run Query" in the status panel below to see the results in the right pane
 ![Run Queries](assets/run-query-d1.gif)
+
+## Features
+
+- Connect to your D1 database from within VS Code
+- Run SQL queries and see the results in a tabular format
+- Easily switch between multiple databases
+- Easily Explore table schemas 
+- TBD features
+  - Export query results to CSV or JSON
+  - code completion integration
+  - object explorer for views, indexes, etc
 
 ## Commands
 The extension provides several commands in the Command Palette (prefixed with "D1"):

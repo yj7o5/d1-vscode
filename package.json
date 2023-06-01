@@ -2,7 +2,7 @@
   "name": "cf-d1",
   "displayName": "Cloudflare D1",
   "description": "Explore and query Cloudflare D1 databases",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "yawarjamal",
   "repository": {
     "type": "git",
