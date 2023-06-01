@@ -59,7 +59,7 @@ export class WebviewController implements vscode.Disposable {
 
     const errors = response.errors;
     const now = new Date().toLocaleTimeString();
-    const basehref = `${this._panel!.webview.asWebviewUri(vscode.Uri.joinPath(this.baseUri, "src"))}/`;
+    const basehref = `${this._panel!.webview.asWebviewUri(vscode.Uri.joinPath(this.baseUri, "dist"))}/`;
     const theme = vscode.window.activeColorTheme.kind === vscode.ColorThemeKind.Dark ? "dark" : "light";
     const data = {
       now,
@@ -69,10 +69,8 @@ export class WebviewController implements vscode.Disposable {
       errors
     };
 
-    const fileUri = vscode.Uri.joinPath(
-      vscode.extensions.getExtension("yawarjamal.cf-d1")!.extensionUri,
-      "src/sql-content.ejs"
-    );
+    // TODO: this is a hack, it won't work in debugger since dist won't exist
+    const fileUri = vscode.Uri.joinPath(this.baseUri, "dist/sql-content.ejs");
     const fileContent = await vscode.workspace.fs.readFile(fileUri);
     const formattedHTML = ejs.render(fileContent.toString(), data);
 
